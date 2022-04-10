@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { Layout, Row, Col, Typography, Spin, Empty } from "antd";
 import { variant, list } from "@effector/reflect";
 import { combine } from "effector";
@@ -11,7 +12,6 @@ const TasksListPage = () => {
   return (
     <Layout className={styles.root}>
       <Layout className={styles.toolbar}>
-        {/* ~ Layout.Toolbar */}
         <Row justify="center">
           <Typography.Title level={1}>Tasks List</Typography.Title>
         </Row>
@@ -28,9 +28,7 @@ const TasksListPage = () => {
   );
 };
 
-const ListItemView: React.FC<{ task: import("shared/api").Task }> = ({
-  task,
-}) => {
+const ListItemView: FC<{ task: import("shared/api").Task }> = ({ task }) => {
   return (
     <Col key={task.id} span={24}>
       <TaskRow
